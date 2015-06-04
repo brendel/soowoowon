@@ -1,0 +1,102 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--Page Template-->
+    <definition name="template" template="/WEB-INF/views/template.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+        <put-attribute name="login" value="/WEB-INF/views/login.jsp"/>
+    </definition>
+
+    <!--Pages-->
+    <definition name="home" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 홈"/>
+        <put-attribute name="main" value="/WEB-INF/views/home.jsp"/>
+    </definition>
+    <definition name="signup" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 가입하기"/>
+        <put-attribute name="main" value="/WEB-INF/views/signup.jsp"/>
+    </definition>
+    <definition name="userinfo" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 회원정보"/>
+        <put-attribute name="main" value="/WEB-INF/views/userinfo.jsp"/>
+    </definition>
+    <definition name="reservation.new" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 체험문의/예약하기"/>
+        <put-attribute name="main" value="/WEB-INF/views/reservation/new.jsp"/>
+    </definition>
+    <definition name="reservation.update" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 체험문의/예약하기"/>
+        <put-attribute name="main" value="/WEB-INF/views/reservation/update.jsp"/>
+    </definition>
+    <definition name="reservation.detail" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 체험문의/예약하기"/>
+        <put-attribute name="main" value="/WEB-INF/views/reservation/detail.jsp"/>
+    </definition>
+    <definition name="reservation.list" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 체험문의/예약하기"/>
+        <put-attribute name="main" value="/WEB-INF/views/reservation/list.jsp"/>
+    </definition>
+    <definition name="article.new" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 후기"/>
+        <put-attribute name="main" value="/WEB-INF/views/article/new.jsp"/>
+    </definition>
+    <definition name="article.detail" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 후기"/>
+        <put-attribute name="main" value="/WEB-INF/views/article/detail.jsp"/>
+    </definition>
+    <definition name="article.update" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 후기"/>
+        <put-attribute name="main" value="/WEB-INF/views/article/update.jsp"/>
+    </definition>
+    <definition name="article.list" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 후기"/>
+        <put-attribute name="main" value="/WEB-INF/views/article/list.jsp"/>
+    </definition>
+    <definition name="gallery" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 사진첩"/>
+        <put-attribute name="main" value="/WEB-INF/views/gallery.jsp"/>
+    </definition>
+    <definition name="authenticationRequired" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 로그인이 필요한 페이지입니다"/>
+        <put-attribute name="main" value="/WEB-INF/views/authenticationRequired.jsp"/>
+    </definition>
+    <definition name="error403" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 권한이 없습니다."/>
+        <put-attribute name="main" value="/WEB-INF/views/error403.jsp"/>
+    </definition>
+    <definition name="error404" extends="template">
+        <put-attribute name="title" value="수우원 에듀팜 | 페이지를 찾을 수 없습니다."/>
+        <put-attribute name="main" value="/WEB-INF/views/error404.jsp"/>
+    </definition>
+
+    <!--Admin Template-->
+    <definition name="admin" template="views/admin/template.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/admin/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+    </definition>
+
+    <!--Admin Pages-->
+    <definition name="admin.stat" extends="admin">
+        <put-attribute name="title" value="수우원 에듀팜 관리자"/>
+        <put-attribute name="main" value="/WEB-INF/views/admin/stat.jsp"/>
+    </definition>
+    <definition name="admin.users" extends="admin">
+        <put-attribute name="title" value="수우원 에듀팜 관리자 | 회원정보"/>
+        <put-attribute name="main" value="/WEB-INF/views/admin/users.jsp"/>
+    </definition>
+    <definition name="admin.editHome" extends="admin">
+        <put-attribute name="title" value="수우원 에듀팜 관리자 | 첫페이지"/>
+        <put-attribute name="main" value="/WEB-INF/views/admin/editHome.jsp"/>
+    </definition>
+    <definition name="admin.reservation" extends="admin">
+        <put-attribute name="title" value="수우원 에듀팜 관리자 | 예약내역"/>
+        <put-attribute name="main" value="/WEB-INF/views/admin/reservation.jsp"/>
+    </definition>
+    <definition name="admin.sms" extends="admin">
+        <put-attribute name="title" value="수우원 에듀팜 관리자 | SMS"/>
+        <put-attribute name="main" value="/WEB-INF/views/admin/sms.jsp"/>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns="http://www.springframework.org/schema/security"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+    <global-method-security pre-post-annotations="enabled"/>
+
+    <http security="none" pattern="/resources/**"/>
+
+    <http entry-point-ref="restAuthenticationEntryPoint" use-expressions="true" pattern="/api/**">
+        <intercept-url pattern="/api/signup" access="isAnonymous()"/>
+        <intercept-url pattern="/api/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/api/**" access="hasRole('ROLE_USER')"/>
+    </http>
+
+    <http auto-config="false" use-expressions="true" pattern="/**">
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/401" access="isAnonymous()"/>
+        <intercept-url pattern="/signup" access="isAnonymous()"/>
+        <intercept-url pattern="/login" access="isAnonymous()"/>
+        <intercept-url pattern="/authenticationRequired" access="isAnonymous()"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/userinfo" access="hasRole('ROLE_USER')"/>
+
+        <intercept-url pattern="/reservation/new" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/reservation/detail/*" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/reservation/update/*" access="hasRole('ROLE_USER')"/>
+
+        <intercept-url pattern="/article/new" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/article/update/*" access="hasRole('ROLE_USER')"/>
+
+        <form-login
+                login-page="/401"
+                default-target-url="/"
+                always-use-default-target="false"
+                authentication-success-handler-ref="restSuccessHandler"
+                authentication-failure-handler-ref="restFailureHandler"
+                login-processing-url="/login"/>
+        <logout logout-url="/logout"/>
+        <access-denied-handler ref="403"/>
+        <remember-me
+                remember-me-parameter="remember_me"
+                user-service-ref="userDetailServiceImpl"
+                data-source-ref="dataSource"
+                token-validity-seconds="604800"/>
+    </http>
+
+    <beans:bean id="restSuccessHandler"
+                class="edufarm.security.MySavedRequestAwareAuthenticationSuccessHandler"/>
+    <beans:bean id="restFailureHandler"
+                class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"/>
+    <beans:bean id="403"
+                class="edufarm.security.MyAccessDeniedHandler"/>
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailServiceImpl">
+            <password-encoder ref="passwordEncoder">
+            </password-encoder>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+</beans:beans>

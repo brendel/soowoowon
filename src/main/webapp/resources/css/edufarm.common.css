@@ -1,0 +1,144 @@
+body {
+    font-family: 'Apple SD Gothic Neo', AppleGothic, 'KoPub Dotum', 'KoPub 돋움', NanumBarunGothic, '나눔바른고딕', '나눔고딕', NanumGothic, '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, sans-serif;
+}
+
+#main {
+    min-height: 960px;
+}
+
+#signup-form .form-group {
+    height: 80px;
+}
+
+.ui-datepicker {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.ui-datepicker-header {
+    font-weight: bold;
+}
+
+.ui-state-hover {
+    background: #eee;
+}
+
+#reservation-date {
+    background: #ffffff;
+    cursor: default;
+}
+
+#detail-content {
+    min-height: 270px;
+}
+
+#detail-name {
+    color: #333;
+}
+
+#reservation-list .label {
+    font-weight: 400;
+}
+
+#article-detail-panel div.panel-heading,
+#article-detail-panel div.panel-footer {
+    background-color: #ffffff;
+}
+
+#uploaded-photos .margin-top-20 {
+    margin-top: 20px;
+}
+
+#uploaded-photos .margin-top-14 {
+    margin-top: 14px;
+}
+
+#photo-upload-progress div.progress, #uploaded-photos div.progress {
+    margin-bottom: 0px;
+}
+
+#uploaded-photos canvas {
+    border-radius: 6px;
+}
+
+#article-photos {
+    margin-bottom: 20px;
+}
+
+#article-photos .article-img {
+    margin-bottom: 14px;
+}
+
+#home-hero {
+    background-image: url(//edu.soowoowon.com/files/css/home_hero.jpg);
+}
+
+#reservation-hero {
+    background-image: url(//edu.soowoowon.com/files/css/reservation_hero.jpg);
+}
+
+#article-hero {
+    background-image: url(//edu.soowoowon.com/files/css/photolog_hero.jpg);
+}
+
+#gallery-hero {
+    background-image: url(//edu.soowoowon.com/files/css/gallery_hero.jpg);
+}
+
+div.edufarm-hero {
+    opacity: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+div.edufarm-hero div.jumbotron {
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#footer {
+    min-height: 70px;
+}
+
+.stat-table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+#reservation-search-result {
+    min-height: 300px;
+}
+
+#userinfo-tabs {
+    margin-bottom: 20px;
+}
+
+#userinfo-header {
+    border-bottom: 0px;
+}
+
+.home-program .row {
+    margin-bottom: 10px;
+}
+
+.home-program ul {
+    padding-left: 20px;
+}
+
+.home-program ul li {
+    padding-bottom: 8px;
+}
+
+#home-photos {
+    margin: 10px -2px 10px -2px;
+}
+
+#home-photos .col-md-3, #home-photos .col-sm-3, #home-photos .col-xs-6 {
+    padding: 2px 2px 2px 2px;
+}
