@@ -49,11 +49,11 @@
     </http>
 
     <beans:bean id="restSuccessHandler"
-                class="edufarm.security.MySavedRequestAwareAuthenticationSuccessHandler"/>
+                class="com.soowoowon.security.MySavedRequestAwareAuthenticationSuccessHandler"/>
     <beans:bean id="restFailureHandler"
                 class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"/>
     <beans:bean id="403"
-                class="edufarm.security.MyAccessDeniedHandler"/>
+                class="com.soowoowon.security.MyAccessDeniedHandler"/>
 
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userDetailServiceImpl">

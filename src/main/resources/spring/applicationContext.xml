@@ -9,7 +9,7 @@
     <util:properties id="env" location="classpath:test.properties"/>
 
     <context:property-placeholder location="classpath:database.properties"/>
-    <context:component-scan base-package="edufarm">
+    <context:component-scan base-package="com.soowoowon">
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
         <context:exclude-filter expression="edufarm.exception.*" type="regex"/>
     </context:component-scan>
@@ -25,7 +25,7 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" autowire="byName">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="edufarm.model"/>
+        <property name="packagesToScan" value="com.soowoowon.model"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
